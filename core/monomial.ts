@@ -10,7 +10,11 @@ export default class Monomial {
 		this.vector = new Array(size).fill(0);
 	}
 
-	static from(order: number, size?: number): Monomial;
+	get order(): number {
+		return parseInt(this.vector.slice().reverse().join(''), 2);
+	}
+
+	static from(order: number, size: number): Monomial;
 
 	static from(vector: number[]): Monomial;
 
@@ -19,7 +23,7 @@ export default class Monomial {
 		if (typeof input === 'number') {
 			assert.ok(input >= 0);
 
-			vector = input.toString(2).split('').map(Number);
+			vector = input.toString(2).padStart(size || 0, '0').split('').reverse().map(Number);
 		} else {
 			vector = input;
 		}
@@ -61,6 +65,6 @@ export default class Monomial {
 			console.log(string);
 		}
 
-		return string;
+		return string || '0';
 	}
 }
