@@ -14,6 +14,12 @@ export default class Monomial {
 		return parseInt(this.vector.slice().reverse().join(''), 2);
 	}
 
+	get deg(): number {
+		return this.vector.reduce(function (deg: number, current: number): number {
+			return deg + (current ? 1 : 0);
+		});
+	}
+
 	static from(order: number, size: number): Monomial;
 
 	static from(vector: number[]): Monomial;
@@ -42,6 +48,10 @@ export default class Monomial {
 		return result;
 	}
 
+	copy(): Monomial {
+		return Monomial.from(this.vector);
+	}
+
 	multiply(m: Monomial): Monomial {
 		assert.strictEqual(m.size, this.size);
 
@@ -57,14 +67,16 @@ export default class Monomial {
 		let string = '';
 		for (let i = 0; i < this.size; i++) {
 			if (this.vector[i]) {
-				string += `x${i}`;
+				string += `x${i + 1}`;
 			}
 		}
+
+		string = string || '1';
 
 		if (print) {
 			console.log(string);
 		}
 
-		return string || '0';
+		return string;
 	}
 }
