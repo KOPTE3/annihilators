@@ -83,3 +83,79 @@ test('#multiply', function () {
 	expect(m.size).toEqual(3);
 	expect(m.vector).toEqual([1, 1, 1]);
 });
+
+test('#CompareMonomials', function () {
+	expect(Monomial.CompareMonomials(
+		Monomial.from([0, 0, 0]),
+		Monomial.from([0, 0, 0]),
+	)).toBe(0);
+
+	expect(Monomial.CompareMonomials(
+		Monomial.from([0, 0, 0]),
+		Monomial.from([1, 0, 0]),
+	)).toBeLessThan(0);
+
+	expect(Monomial.CompareMonomials(
+		Monomial.from([0, 0, 0]),
+		Monomial.from([0, 1, 0]),
+	)).toBeLessThan(0);
+
+	expect(Monomial.CompareMonomials(
+		Monomial.from([0, 0, 0]),
+		Monomial.from([0, 0, 1]),
+	)).toBeLessThan(0);
+
+	expect(Monomial.CompareMonomials(
+		Monomial.from([1, 0, 0]),
+		Monomial.from([0, 0, 1]),
+	)).toBeLessThan(0);
+
+	expect(Monomial.CompareMonomials(
+		Monomial.from([0, 0, 1]),
+		Monomial.from([0, 1, 0]),
+	)).toBeGreaterThan(0);
+
+	expect(Monomial.CompareMonomials(
+		Monomial.from([0, 0, 1]),
+		Monomial.from([0, 1, 1]),
+	)).toBeLessThan(0);
+
+	expect(Monomial.CompareMonomials(
+		Monomial.from([1, 0, 1]),
+		Monomial.from([0, 1, 1]),
+	)).toBeLessThan(0);
+
+	expect(Monomial.CompareMonomials(
+		Monomial.from([1, 1, 1]),
+		Monomial.from([1, 1, 1]),
+	)).toBe(0);
+
+	expect(Monomial.CompareMonomials(
+		Monomial.from([1, 1, 1, 1]),
+		Monomial.from([1, 1, 1, 1]),
+	)).toBe(0);
+
+	expect(Monomial.CompareMonomials(
+		Monomial.from([1, 0, 0, 1]),
+		Monomial.from([0, 1, 1, 0]),
+	)).toBeLessThan(0);
+
+	expect(Monomial.CompareMonomials(
+		Monomial.from([0, 1, 1, 1, 0]),
+		Monomial.from([1, 0, 0, 1, 1]),
+	)).toBeGreaterThan(0);
+});
+
+test('#GenerateSortedMonomials', function () {
+	const monomials = Monomial.GenerateSortedMonomials(5);
+	const expected = [
+		'1',
+		'x1', 'x2', 'x3', 'x4', 'x5',
+		'x1x2', 'x1x3', 'x1x4', 'x1x5', 'x2x3', 'x2x4', 'x2x5', 'x3x4', 'x3x5', 'x4x5',
+		'x1x2x3', 'x1x2x4', 'x1x2x5', 'x1x3x4', 'x1x3x5', 'x1x4x5', 'x2x3x4', 'x2x3x5', 'x2x4x5', 'x3x4x5',
+		'x1x2x3x4', 'x1x2x3x5', 'x1x2x4x5', 'x1x3x4x5', 'x2x3x4x5',
+		'x1x2x3x4x5',
+	];
+
+	expect(monomials.map(m => m.toString())).toEqual(expected);
+});

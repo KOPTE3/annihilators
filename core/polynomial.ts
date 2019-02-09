@@ -14,6 +14,16 @@ export default class Polynomial {
 		return this.vector.length;
 	}
 
+	static from(vector: number[], size: number): Polynomial {
+		assert.strictEqual(vector.length, Math.pow(2, size));
+
+		const result = new Polynomial(size);
+		for (let i = 0; i < result.length; i++) {
+			result.vector[i] = vector[i] ? 1 : 0;
+		}
+		return result;
+	}
+
 	append(m: Monomial): Polynomial {
 		const order = m.order;
 
@@ -23,8 +33,7 @@ export default class Polynomial {
 
 	copy(): Polynomial {
 		const result = new Polynomial(this.size);
-		const l = result.length;
-		for (let i = 0; i < l; i++) {
+		for (let i = 0; i < result.length; i++) {
 			result.vector[i] = this.vector[i];
 		}
 
@@ -77,9 +86,8 @@ export default class Polynomial {
 	toString(print?: boolean): string {
 		let string = '';
 		let parts: string[] = [];
-		const l = this.length;
 
-		for (let i = 0; i < l; i++) {
+		for (let i = 0; i < this.length; i++) {
 			if (this.vector[i]) {
 				parts.push(Monomial.from(i, this.size).toString());
 			}
@@ -94,5 +102,17 @@ export default class Polynomial {
 		}
 
 		return string;
+	}
+
+	sort(): Monomial[] {
+		let sorted: Monomial[] = [];
+
+		for (let i = 0; i < this.length; i++) {
+			if (this.vector[i]) {
+				sorted.push(Monomial.from(i, this.size));
+			}
+		}
+
+		return sorted.sort(Monomial.CompareMonomials);
 	}
 }

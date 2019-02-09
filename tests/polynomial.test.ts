@@ -60,6 +60,12 @@ test('#toString', function () {
 	expect(p.toString()).toEqual('1+x1x2+x3');
 });
 
+test('#from', function () {
+	const p = Polynomial.from([1, 0, 0, 1, 1, 0, 0, 0], 3);
+
+	expect(p.toString()).toEqual('1+x1x2+x3');
+});
+
 test('#add', function () {
 	const p1 = new Polynomial(3);
 	p1.append(Monomial.from(0, 3));
@@ -76,7 +82,6 @@ test('#add', function () {
 	expect(p.vector).toEqual([0, 0, 0, 1, 0, 0, 0, 1]);
 });
 
-
 test('#multiply', function () {
 	const p1 = new Polynomial(3);
 	p1.append(Monomial.from(0, 3));
@@ -91,4 +96,11 @@ test('#multiply', function () {
 	const p = p1.multiply(p2);
 
 	expect(p.vector).toEqual([1, 0, 0, 1, 1, 0, 0, 0]);
+});
+
+test('#sort', function () {
+	const p = Polynomial.from([1, 0, 0, 1, 1, 0, 0, 0], 3);
+	const sorted = p.sort();
+
+	expect(sorted.map(m => m.toString())).toEqual(['1', 'x3', 'x1x2']);
 });

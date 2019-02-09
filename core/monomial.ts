@@ -27,9 +27,13 @@ export default class Monomial {
 	static from(input: number[] | number, size?: number): Monomial {
 		let vector: number[];
 		if (typeof input === 'number') {
+			assert.ok(size);
+			const s = size || 0;
+			assert.ok(s >= 0);
 			assert.ok(input >= 0);
+			assert.ok(input < Math.pow(2, s));
 
-			vector = input.toString(2).padStart(size || 0, '0').split('').reverse().map(Number);
+			vector = input.toString(2).padStart(s, '0').split('').reverse().map(Number);
 		} else {
 			vector = input;
 		}
@@ -78,5 +82,36 @@ export default class Monomial {
 		}
 
 		return string;
+	}
+
+	static CompareMonomials(left: Monomial, right: Monomial): number {
+		assert.strictEqual(left.size, right.size);
+
+		const lDeg = left.deg;
+		const rDeg = right.deg;
+
+		if (lDeg !== rDeg) {
+			return lDeg - rDeg;
+		}
+
+		for (let i = 0; i < left.size; i++) {
+			if (left.vector[i] > right.vector[i]) {
+				return -1;
+			}
+			if (left.vector[i] < right.vector[i]) {
+				return 1;
+			}
+		}
+
+		return 0;
+	}
+
+	static GenerateSortedMonomials(size: number): Monomial[] {
+		const length = Math.pow(2, size);
+		const allMonomials: Monomial[] = Array.from(new Array(length), function (u, order: number): Monomial {
+			return Monomial.from(order, size);
+		});
+
+		return allMonomials.sort(Monomial.CompareMonomials);
 	}
 }
