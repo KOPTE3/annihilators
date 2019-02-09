@@ -14,6 +14,18 @@ export default class Polynomial {
 		return this.vector.length;
 	}
 
+	get deg(): number {
+		const size = this.size;
+
+		return this.vector.reduce(function (deg, value, order) {
+			if (value) {
+				return Math.max(deg, Monomial.from(order, size).deg);
+			}
+
+			return deg;
+		}, 0);
+	}
+
 	static from(vector: number[], size: number): Polynomial {
 		assert.strictEqual(vector.length, Math.pow(2, size));
 
@@ -104,6 +116,23 @@ export default class Polynomial {
 		return string;
 	}
 
+	toTex(): string {
+		let string = '';
+		let parts: string[] = [];
+
+		for (let i = 0; i < this.length; i++) {
+			if (this.vector[i]) {
+				parts.push(Monomial.from(i, this.size).toTex());
+			}
+		}
+
+		string = parts.join(' + ');
+
+		string = string || '0';
+
+		return string;
+	}
+
 	sort(): Monomial[] {
 		let sorted: Monomial[] = [];
 
@@ -114,5 +143,36 @@ export default class Polynomial {
 		}
 
 		return sorted.sort(Monomial.CompareMonomials);
+	}
+
+	static * Vectors(size: number) {
+		const length = Math.pow(2, size);
+		const vector: number[] = (new Array(length)).fill(0);
+
+		while (!vector.every(v => v === 1)) {
+			yield vector;
+			for (let i = 0; i < vector.length; i++) {
+				if (vector[i]) {
+					vector[i] = 0;
+				} else {
+					vector[i] = 1;
+					break;
+				}
+			}
+		}
+
+		yield vector;
+	}
+
+	static GeneratePolynomials(size: number): Polynomial[] {
+		assert.ok(size > 0);
+
+		const result: Polynomial[] = [];
+
+		for (let vector of Polynomial.Vectors(size)) {
+			result.push(Polynomial.from(vector, size));
+		}
+
+		return result;
 	}
 }

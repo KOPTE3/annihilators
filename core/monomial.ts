@@ -84,6 +84,19 @@ export default class Monomial {
 		return string;
 	}
 
+	toTex(): string {
+		let string = '';
+		for (let i = 0; i < this.size; i++) {
+			if (this.vector[i]) {
+				string += `x_{${i + 1}}`;
+			}
+		}
+
+		string = string || '1';
+
+		return string;
+	}
+
 	static CompareMonomials(left: Monomial, right: Monomial): number {
 		assert.strictEqual(left.size, right.size);
 

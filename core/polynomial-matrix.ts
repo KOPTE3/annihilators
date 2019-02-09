@@ -1,17 +1,21 @@
 import * as assert from 'assert';
 import Monomial from './monomial';
-import {Matrix} from 'mathjs';
 import * as math from 'mathjs';
+import {Matrix} from 'mathjs';
 import Polynomial from './polynomial';
 
 export default class PolynomialMatrix {
-	private readonly monomials: Monomial[];
-	private _polynomial: Polynomial;
 	public matrix: Matrix;
+	private readonly monomials: Monomial[];
 
-	public get length(): number {
-		return this.monomials.length;
+	constructor(public readonly size: number) {
+		assert.ok(this.size > 0);
+
+		this.monomials = Monomial.GenerateSortedMonomials(size);
+		this.matrix = math.matrix(math.zeros(size, size));
 	}
+
+	private _polynomial: Polynomial;
 
 	public get polynomial(): Polynomial {
 		return this._polynomial;
@@ -19,6 +23,10 @@ export default class PolynomialMatrix {
 
 	public set polynomial(polynomial: Polynomial) {
 		this.calculate(polynomial);
+	}
+
+	public get length(): number {
+		return this.monomials.length;
 	}
 
 	calculate(polynomial: Polynomial) {
@@ -40,13 +48,6 @@ export default class PolynomialMatrix {
 				this.matrix.set([row, column], result.vector[columnMonomial.order]);
 			}
 		}
-	}
-
-	constructor(public readonly size: number) {
-		assert.ok(this.size > 0);
-
-		this.monomials = Monomial.GenerateSortedMonomials(size);
-		this.matrix = math.matrix(math.zeros(size, size));
 	}
 
 	print() {
