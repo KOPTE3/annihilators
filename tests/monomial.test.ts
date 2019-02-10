@@ -159,3 +159,12 @@ test('#GenerateSortedMonomials', function () {
 
 	expect(monomials.map(m => m.toString())).toEqual(expected);
 });
+
+test('#GenerateSortedMap', function () {
+	const map = Monomial.GenerateSortedMap(4);
+
+	expect(map).toEqual({
+		orderedToSorted: [0, 1, 2, 5, 3, 6, 8, 11, 4, 7, 9, 12, 10, 13, 14, 15],
+		sortedToOrdered: [0, 1, 2, 4, 8, 3, 5, 9, 6, 10, 12, 7, 11, 13, 14, 15],
+	});
+});

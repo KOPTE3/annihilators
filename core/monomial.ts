@@ -127,4 +127,21 @@ export default class Monomial {
 
 		return allMonomials.sort(Monomial.CompareMonomials);
 	}
+
+	static GenerateSortedMap(size: number): {orderedToSorted: number[], sortedToOrdered: number[]} {
+		const length = Math.pow(2, size);
+
+		const orderedToSorted = new Array(length).fill(0);
+		const sortedToOrdered = new Array(length).fill(0);
+
+		const sortedMonomials = Monomial.GenerateSortedMonomials(size);
+
+		for (let position = 0; position < sortedMonomials.length; position++) {
+			const order = sortedMonomials[position].order;
+			orderedToSorted[order] = position;
+			sortedToOrdered[position] = order;
+		}
+
+		return {orderedToSorted, sortedToOrdered};
+	}
 }
