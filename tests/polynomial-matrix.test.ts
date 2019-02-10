@@ -34,3 +34,21 @@ test('#calculate', function () {
 		[0,0,0,0],
 	]);
 });
+
+test('#af', function () {
+	const pm = new PolynomialMatrix(2);
+
+	const p2 = new Polynomial(2);
+	p2.append(Monomial.from(3, 2));
+	pm.calculate(p2);
+	expect(pm.af()).toBe(1);
+
+	p2.append(Monomial.from(0, 2));
+	pm.calculate(p2);
+	expect(pm.af()).toBe(2);
+
+	const p1 = new Polynomial(2);
+	p1.append(Monomial.from(0, 2));
+	pm.calculate(p1);
+	expect(pm.af.bind(pm)).toThrow();
+});

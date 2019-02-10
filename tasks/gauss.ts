@@ -1,13 +1,11 @@
-import {gaussAlgorithm} from '../core/gauss-algorithm';
 import {Matrix} from 'mathjs';
 import * as math from 'mathjs';
+import gaussAlgorithm from '../core/gauss-algorithm';
 
 
 const matrix = math.matrix([
-	[1,0,0,1],
-	[0,1,0,1],
-	[0,0,1,1],
-	[0,0,0,0],
+	[0,1,1,1],
+	[1,0,1,1],
 ]);
 
 const m = gaussAlgorithm(matrix);

@@ -1,1 +1,1 @@
-import './tasks/gauss';
+import './tasks/task1';
