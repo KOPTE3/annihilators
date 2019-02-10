@@ -2,6 +2,7 @@ import * as assert from 'assert';
 import Monomial from './monomial';
 import {bitCount} from './utils/bit-count';
 import {perf, perfEnd} from './utils/perf';
+import {binomials} from './utils/binomials';
 
 export default class Polynomial {
 	public vector: number[] = [];
@@ -35,6 +36,81 @@ export default class Polynomial {
 		for (let i = 0; i < result.length; i++) {
 			result.vector[i] = vector[i] ? 1 : 0;
 		}
+		return result;
+	}
+
+	static* Vectors(size: number) {
+		const length = Math.pow(2, size);
+		const vector: number[] = (new Array(length)).fill(0);
+
+		while (!vector.every(v => v === 1)) {
+			yield vector;
+			perf('inc');
+			for (let i = 0; i < vector.length; i++) {
+				if (vector[i]) {
+					vector[i] = 0;
+				} else {
+					vector[i] = 1;
+					break;
+				}
+			}
+			perfEnd('inc');
+		}
+
+		yield vector;
+	}
+
+	static* DegVectors(size: number, deg: number, mapped?: boolean) {
+		const length = Math.pow(2, size);
+		const partSizes = binomials(size);
+		let fromIndex = 0;
+		let toIndex = 0;
+		for (let i = 0; i <= deg; i++) {
+			if (i < deg) {
+				fromIndex += partSizes[i];
+			}
+			if (i <= deg) {
+				toIndex += partSizes[i];
+			}
+
+		}
+		const vector: number[] = (new Array(length)).fill(0);
+		vector[fromIndex] = 1;
+
+		const maps = Monomial.GenerateSortedMap(size);
+		function m(initialVector: number[]): number[] {
+			const mappedVector: number[] = (new Array(length)).fill(0);
+			initialVector.forEach((value, position) => mappedVector[maps.sortedToOrdered[position]] = value);
+			return mappedVector;
+		}
+
+		while (vector[toIndex] !== 1) {
+			if (mapped) {
+				yield m(vector);
+			} else {
+				yield vector;
+			}
+
+			for (let i = 0; i < vector.length; i++) {
+				if (vector[i]) {
+					vector[i] = 0;
+				} else {
+					vector[i] = 1;
+					break;
+				}
+			}
+		}
+	}
+
+	static GeneratePolynomials(size: number): Polynomial[] {
+		assert.ok(size > 0);
+
+		const result: Polynomial[] = [];
+
+		for (let vector of Polynomial.Vectors(size)) {
+			result.push(Polynomial.from(vector, size));
+		}
+
 		return result;
 	}
 
@@ -145,38 +221,5 @@ export default class Polynomial {
 		}
 
 		return sorted.sort(Monomial.CompareMonomials);
-	}
-
-	static * Vectors(size: number) {
-		const length = Math.pow(2, size);
-		const vector: number[] = (new Array(length)).fill(0);
-
-		while (!vector.every(v => v === 1)) {
-			yield vector;
-			perf('inc');
-			for (let i = 0; i < vector.length; i++) {
-				if (vector[i]) {
-					vector[i] = 0;
-				} else {
-					vector[i] = 1;
-					break;
-				}
-			}
-			perfEnd('inc');
-		}
-
-		yield vector;
-	}
-
-	static GeneratePolynomials(size: number): Polynomial[] {
-		assert.ok(size > 0);
-
-		const result: Polynomial[] = [];
-
-		for (let vector of Polynomial.Vectors(size)) {
-			result.push(Polynomial.from(vector, size));
-		}
-
-		return result;
 	}
 }
