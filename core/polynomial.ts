@@ -1,5 +1,7 @@
 import * as assert from 'assert';
 import Monomial from './monomial';
+import {bitCount} from './utils/bit-count';
+import {perf, perfEnd} from './utils/perf';
 
 export default class Polynomial {
 	public vector: number[] = [];
@@ -19,7 +21,7 @@ export default class Polynomial {
 
 		return this.vector.reduce(function (deg, value, order) {
 			if (value) {
-				return Math.max(deg, Monomial.from(order, size).deg);
+				return Math.max(deg, bitCount(order));
 			}
 
 			return deg;
@@ -151,6 +153,7 @@ export default class Polynomial {
 
 		while (!vector.every(v => v === 1)) {
 			yield vector;
+			perf('inc');
 			for (let i = 0; i < vector.length; i++) {
 				if (vector[i]) {
 					vector[i] = 0;
@@ -159,6 +162,7 @@ export default class Polynomial {
 					break;
 				}
 			}
+			perfEnd('inc');
 		}
 
 		yield vector;

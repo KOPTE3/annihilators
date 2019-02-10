@@ -1,1 +1,1 @@
-import './tasks/task1';
+import './tasks/generate-all';

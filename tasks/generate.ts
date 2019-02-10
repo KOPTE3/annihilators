@@ -3,8 +3,8 @@ import {printTex} from '../core/print';
 import * as fs from 'fs';
 import * as path from 'path';
 
-const size = 5;
-const deg = 3;
+const size = 7;
+const deg = 6;
 const limit = 512;
 
 const filteredPolynomials: Polynomial[] = [];
@@ -20,7 +20,7 @@ for (let vector of Polynomial.Vectors(size)) {
 }
 
 fs.writeFileSync(
-	path.resolve(__dirname, '..', 'size5deg3.json'),
+	path.resolve(__dirname, '..', 'size7deg6.json'),
 	JSON.stringify(filteredPolynomials.map(p => p.vector)),
 	'utf8',
 );
