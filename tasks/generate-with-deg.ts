@@ -7,10 +7,10 @@ const outputDir = path.resolve(__dirname, '..', 'generated-all');
 
 type Vector = number[];
 
-const size = 4;
-const deg = 3;
+const size = 7;
+const deg = 2;
 
-const stream = fs.createWriteStream(path.resolve(outputDir, `size-${size}-deg-${deg}-2.txt`), {
+const stream = fs.createWriteStream(path.resolve(outputDir, `size-${size}-deg-${deg}-3.txt`), {
 	autoClose: true,
 	encoding: 'utf8',
 });
@@ -27,16 +27,18 @@ function batch() {
 	while ({done, value: vector} = generator.next(), !done) {
 		count++;
 		subCount++;
-		stream.write(vector.join('') + '\n', 'utf8');
+		stream.write(vector.join('') + ' ' + count + '\n', 'utf8');
 
-		if (count === 1000000) {
+		if (count === 100000) {
 			break;
 		}
 
-		if (subCount % 10000 === 0) {
+		if (count % 50000 === 0) {
 			console.dir({count});
+		}
 
-			setImmediate(batch);
+		if (subCount % 10 === 0) {
+			setTimeout(batch, 1);
 			return;
 		}
 	}
@@ -46,7 +48,9 @@ function batch() {
 	console.log(`Generated ${count} polynomials`);
 
 	console.timeEnd('generate-with-deg');
-	stream.end();
+	stream.end(function () {
+		console.log('completed');
+	});
 }
 
-setImmediate(batch);
+setTimeout(batch, 1);
