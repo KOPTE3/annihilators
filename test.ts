@@ -1,4 +1,4 @@
-import './tasks/generate-with-deg';
+import './tasks/check-2';
 
 // import Polynomial from './core/polynomial';
 //

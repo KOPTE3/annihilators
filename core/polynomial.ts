@@ -29,6 +29,10 @@ export default class Polynomial {
 		}, 0);
 	}
 
+	isZero(): boolean {
+		return this.vector.every(bit => bit === 0);
+	}
+
 	static from(vector: number[], size: number): Polynomial {
 		assert.strictEqual(vector.length, Math.pow(2, size));
 
