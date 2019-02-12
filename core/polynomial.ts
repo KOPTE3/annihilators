@@ -29,10 +29,6 @@ export default class Polynomial {
 		}, 0);
 	}
 
-	isZero(): boolean {
-		return this.vector.every(bit => bit === 0);
-	}
-
 	static from(vector: number[], size: number): Polynomial {
 		assert.strictEqual(vector.length, Math.pow(2, size));
 
@@ -82,6 +78,7 @@ export default class Polynomial {
 		vector[fromIndex] = 1;
 
 		const maps = Monomial.GenerateSortedMap(size);
+
 		function m(initialVector: number[]): number[] {
 			const mappedVector: number[] = (new Array(length)).fill(0);
 			initialVector.forEach((value, position) => mappedVector[maps.sortedToOrdered[position]] = value);
@@ -106,6 +103,38 @@ export default class Polynomial {
 		}
 	}
 
+	static symmetric(size: number, kvector: number[]): Polynomial {
+		assert.ok(size > 0);
+		assert.strictEqual(kvector.length, size + 1);
+
+		const length = Math.pow(2, size);
+
+		const vector: number[] = (new Array(length)).fill(0);
+		const maps = Monomial.GenerateSortedMap(size);
+		const partSizes = binomials(size);
+
+		let currentIndex = 0;
+
+		for (let i = 0; i <= kvector.length; i++) {
+			if (kvector[i]) {
+				for (let j = 0; j < partSizes[i]; j++) {
+					vector[currentIndex + j] = 1;
+				}
+			}
+
+			currentIndex += partSizes[i];
+		}
+
+		function m(initialVector: number[]): number[] {
+			const mappedVector: number[] = (new Array(length)).fill(0);
+			initialVector.forEach((value, position) => mappedVector[maps.sortedToOrdered[position]] = value);
+			return mappedVector;
+		}
+
+		const mapped = m(vector);
+		return Polynomial.from(mapped, size);
+	}
+
 	static GeneratePolynomials(size: number): Polynomial[] {
 		assert.ok(size > 0);
 
@@ -116,6 +145,10 @@ export default class Polynomial {
 		}
 
 		return result;
+	}
+
+	isZero(): boolean {
+		return this.vector.every(bit => bit === 0);
 	}
 
 	append(m: Monomial): Polynomial {
