@@ -18,11 +18,19 @@ export default class Polynomial {
 	}
 
 	get deg(): number {
-		const size = this.size;
-
 		return this.vector.reduce(function (deg, value, order) {
 			if (value) {
 				return Math.max(deg, bitCount(order));
+			}
+
+			return deg;
+		}, 0);
+	}
+
+	get minDeg(): number {
+		return this.vector.reduce(function (deg, value, order) {
+			if (value) {
+				return Math.min(deg, bitCount(order));
 			}
 
 			return deg;
@@ -100,6 +108,30 @@ export default class Polynomial {
 					break;
 				}
 			}
+		}
+	}
+
+	static* SymmetricVectors(size: number) {
+		assert.ok(size > 0);
+		assert.ok(size < 32);
+
+		let bitmask = 0;
+		const length = size + 1;
+
+		const bits: number[] = [];
+		for (let i = 0; i < length; i++) {
+			bits[i] = 1 << i;
+		}
+
+		const threshold = 1 << length;
+
+		while (!(bitmask & threshold)) {
+			const vector: number[] = (new Array(length)).fill(0);
+			for (let i = 0; i < length; i++) {
+				vector[i] = (bitmask & bits[i]) ? 1 : 0;
+			}
+			yield vector;
+			bitmask++;
 		}
 	}
 

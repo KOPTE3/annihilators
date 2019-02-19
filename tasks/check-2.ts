@@ -84,4 +84,3 @@ for (let vector of entryWithAf2.vectors) {
 }
 
 console.dir({n2, find2});
-
