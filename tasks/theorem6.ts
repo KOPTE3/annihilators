@@ -2,7 +2,7 @@ import Polynomial from '../core/polynomial';
 import * as assert from 'assert';
 
 
-const SIZE = 8;
+const SIZE = 5;
 
 const multiplierVector: number[] = (new Array(SIZE + 1)).fill(0);
 multiplierVector[2] = 1;
@@ -36,7 +36,8 @@ for (let symmetricVector of Polynomial.SymmetricVectors(SIZE)) {
 
 	if (check === isZero) {
 		passed++
-	} else {
+	}
+	if (isZero) {
 		console.log(symmetricVector, {check, isZero});
 	}
 }
