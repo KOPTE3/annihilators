@@ -1,0 +1,9 @@
+a(f)=4 f=1+x1x2x3x4+x1x2x3x5+x1x2x4x5+x1x3x4x5+x2x3x4x5
+a(f)=4 f=x1x2+x1x3+x1x4+x1x5+x2x3+x2x4+x2x5+x3x4+x3x5+x4x5+x1x2x3x4+x1x2x3x5+x1x2x4x5+x1x3x4x5+x2x3x4x5
+a(f)=4 f=x1+x2+x3+x4+x5+x1x2+x1x3+x1x4+x1x5+x2x3+x2x4+x2x5+x3x4+x3x5+x4x5+x1x2x3+x1x2x4+x1x2x5+x1x3x4+x1x3x5+x1x4x5+x2x3x4+x2x3x5+x2x4x5+x3x4x5+x1x2x3x4+x1x2x3x5+x1x2x4x5+x1x3x4x5+x2x3x4x5
+a(f)=5 f=1+x1x2x3x4x5
+a(f)=4 f=1+x1+x2+x3+x4+x5+x1x2x3+x1x2x4+x1x2x5+x1x3x4+x1x3x5+x1x4x5+x2x3x4+x2x3x5+x2x4x5+x3x4x5+x1x2x3x4x5
+a(f)=4 f=1+x1x2x3x4+x1x2x3x5+x1x2x4x5+x1x3x4x5+x2x3x4x5+x1x2x3x4x5
+a(f)=5 f=x1+x2+x3+x4+x5+x1x2+x1x3+x1x4+x1x5+x2x3+x2x4+x2x5+x3x4+x3x5+x4x5+x1x2x3+x1x2x4+x1x2x5+x1x3x4+x1x3x5+x1x4x5+x2x3x4+x2x3x5+x2x4x5+x3x4x5+x1x2x3x4+x1x2x3x5+x1x2x4x5+x1x3x4x5+x2x3x4x5+x1x2x3x4x5
+symmetric-check-3: 161.516ms
+[ [ 0, 1 ], [ 1, 15 ], [ 2, 21 ], [ 3, 19 ], [ 4, 5 ], [ 5, 2 ] ]
