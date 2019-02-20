@@ -1,2 +1,2 @@
 // import './tasks/theorem6';
-import './tasks/symmetric-check-3';
+import './tasks/theorem-6-hypothesis';
