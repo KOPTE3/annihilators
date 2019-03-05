@@ -1,23 +1,24 @@
 import * as assert from 'assert';
+import {bitCount} from './utils/bit-count';
 
 
 export default class Monomial {
-	public vector: number[];
+	private _order: number = 0;
+
+	public get vector(): number[] {
+		return this._order.toString(2).padStart(this.size, '0').split('').reverse().map(Number);
+	}
 
 	constructor(public readonly size: number) {
 		assert.ok(this.size > 0);
-
-		this.vector = new Array(size).fill(0);
 	}
 
 	get order(): number {
-		return parseInt(this.vector.slice().reverse().join(''), 2);
+		return this._order;
 	}
 
 	get deg(): number {
-		return this.vector.reduce(function (deg: number, current: number): number {
-			return deg + (current ? 1 : 0);
-		});
+		return bitCount(this._order);
 	}
 
 	static from(order: number, size: number): Monomial;
@@ -25,7 +26,8 @@ export default class Monomial {
 	static from(vector: number[]): Monomial;
 
 	static from(input: number[] | number, size?: number): Monomial {
-		let vector: number[];
+		let order: number;
+		let inputSize = 0;
 		if (typeof input === 'number') {
 			assert.ok(size);
 			const s = size || 0;
@@ -33,44 +35,38 @@ export default class Monomial {
 			assert.ok(input >= 0);
 			assert.ok(input < Math.pow(2, s));
 
-			vector = input.toString(2).padStart(s, '0').split('').reverse().map(Number);
+			order = input;
 		} else {
-			vector = input;
+			inputSize = input.length;
+			order = parseInt(input.slice().reverse().join(''), 2);
 		}
 
-		const _size = size || vector.length;
+		const _size = size || inputSize;
 		assert.ok(_size > 0);
 
 		const result = new Monomial(_size);
-
-		for (let i = 0; i < _size; i++) {
-			if (vector[i]) {
-				result.vector[i] = 1;
-			}
-		}
+		result._order = order;
 
 		return result;
 	}
 
 	copy(): Monomial {
-		return Monomial.from(this.vector);
+		return Monomial.from(this._order, this.size);
 	}
 
 	multiply(m: Monomial): Monomial {
 		assert.strictEqual(m.size, this.size);
 
-		const result = new Monomial(this.size);
-		for (let i = 0; i < this.size; i++) {
-			result.vector[i] = (this.vector[i] + m.vector[i]) ? 1 : 0;
-		}
+		const result = this._order | m.order;
 
-		return result;
+		return Monomial.from(result, this.size);
 	}
 
 	toString(print?: boolean): string {
+		const v = this.vector;
 		let string = '';
 		for (let i = 0; i < this.size; i++) {
-			if (this.vector[i]) {
+			if (v[i]) {
 				string += `x${i + 1}`;
 			}
 		}
@@ -85,9 +81,10 @@ export default class Monomial {
 	}
 
 	toTex(): string {
+		const v = this.vector;
 		let string = '';
 		for (let i = 0; i < this.size; i++) {
-			if (this.vector[i]) {
+			if (v[i]) {
 				string += `x_{${i + 1}}`;
 			}
 		}
@@ -107,11 +104,14 @@ export default class Monomial {
 			return lDeg - rDeg;
 		}
 
+		const lV = left.vector;
+		const rV = right.vector;
+
 		for (let i = 0; i < left.size; i++) {
-			if (left.vector[i] > right.vector[i]) {
+			if (lV[i] > rV[i]) {
 				return -1;
 			}
-			if (left.vector[i] < right.vector[i]) {
+			if (lV[i] < rV[i]) {
 				return 1;
 			}
 		}
