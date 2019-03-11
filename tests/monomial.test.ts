@@ -168,3 +168,17 @@ test('#GenerateSortedMap', function () {
 		sortedToOrdered: [0, 1, 2, 4, 8, 3, 5, 9, 6, 10, 12, 7, 11, 13, 14, 15],
 	});
 });
+
+test('#deg', function () {
+	let m = Monomial.from([0, 0, 0, 0]);
+	expect(m.deg).toEqual(0);
+
+	m = Monomial.from([1, 0, 0, 0]);
+	expect(m.deg).toEqual(1);
+
+	m = Monomial.from([1, 0, 1, 0]);
+	expect(m.deg).toEqual(2);
+
+	m = Monomial.from([1, 1, 1, 1]);
+	expect(m.deg).toEqual(4);
+});
