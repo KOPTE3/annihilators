@@ -115,7 +115,7 @@ export default class Polynomial {
 		assert.ok(size > 0);
 		assert.ok(size < 32);
 
-		let bitmask = 0;
+		let bitmask = 1;
 		const length = size + 1;
 
 		const bits: number[] = [];
@@ -132,6 +132,30 @@ export default class Polynomial {
 			}
 			yield vector;
 			bitmask++;
+		}
+	}
+
+	static* SymmetricVectors2(size: number) {
+		assert.ok(size > 0);
+		assert.ok(size < 32);
+
+		let bitmask = 2;
+		const length = size + 1;
+
+		const bits: number[] = [];
+		for (let i = 0; i < length; i++) {
+			bits[i] = 1 << i;
+		}
+
+		const threshold = 1 << length;
+
+		while (!(bitmask & threshold)) {
+			const vector: number[] = (new Array(length)).fill(0);
+			for (let i = 0; i < length; i++) {
+				vector[i] = (bitmask & bits[i]) ? 1 : 0;
+			}
+			yield vector;
+			bitmask += 2;
 		}
 	}
 

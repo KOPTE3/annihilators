@@ -51,6 +51,15 @@ export default class PolynomialMatrix {
 		}
 	}
 
+	plusOne() {
+		this._polynomial.append(Monomial.from(0, this.size));
+
+		for (let row = 0; row < this.length; row++) {
+			const initial = this.matrix.get([row, row]);
+			this.matrix.set([row, row], initial ? 0 : 1);
+		}
+	}
+
 	print() {
 		console.log(this.monomials.join('  '));
 
