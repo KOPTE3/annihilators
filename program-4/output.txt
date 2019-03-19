@@ -1,0 +1,558 @@
+/Users/anatolijostapenko/.nvm/versions/node/v10.14.2/bin/node /Users/anatolijostapenko/bmstu/annihilators/program-4/index.js
+λ = [ 0 1 0 0 ]
+x1+x2+x3+x4+x5+x6+x7
+[ 0 0 0 0 0 0 0 0 ]
+[ 1 1 0 0 0 0 0 0 ]
+[ 0 0 1 1 0 0 0 0 ]
+[ 1 1 1 1 0 0 0 0 ]
+[ 0 0 0 0 1 1 0 0 ]
+[ 1 1 0 0 1 1 0 0 ]
+[ 0 0 1 1 1 1 0 0 ]
+[ 1 1 1 1 1 1 0 0 ]
+
+[ 0 0 0 0 0 0 1 1 ]
+[ 1 1 0 0 0 0 1 1 ]
+[ 0 0 1 1 0 0 1 1 ]
+[ 1 1 1 1 0 0 1 1 ]
+[ 0 0 0 0 1 1 1 1 ]
+[ 1 1 0 0 1 1 1 1 ]
+[ 0 0 1 1 1 1 1 1 ]
+[ 1 1 1 1 1 1 1 1 ]
+
+Найдено 16 полиномов
+program-4: 161.304ms
+
+Process finished with exit code 0
+
+
+/Users/anatolijostapenko/.nvm/versions/node/v10.14.2/bin/node /Users/anatolijostapenko/bmstu/annihilators/program-4/index.js
+λ = [ 1 1 0 0 ]
+1+x1+x2+x3+x4+x5+x6+x7
+[ 0 0 0 0 0 0 0 0 ]
+[ 0 1 0 0 0 0 0 0 ]
+[ 0 0 0 1 0 0 0 0 ]
+[ 0 1 0 1 0 0 0 0 ]
+[ 0 0 0 0 0 1 0 0 ]
+[ 0 1 0 0 0 1 0 0 ]
+[ 0 0 0 1 0 1 0 0 ]
+[ 0 1 0 1 0 1 0 0 ]
+
+[ 0 0 0 0 0 0 0 1 ]
+[ 0 1 0 0 0 0 0 1 ]
+[ 0 0 0 1 0 0 0 1 ]
+[ 0 1 0 1 0 0 0 1 ]
+[ 0 0 0 0 0 1 0 1 ]
+[ 0 1 0 0 0 1 0 1 ]
+[ 0 0 0 1 0 1 0 1 ]
+[ 0 1 0 1 0 1 0 1 ]
+
+Найдено 16 полиномов
+program-4: 157.026ms
+
+Process finished with exit code 0
+
+
+
+
+/Users/anatolijostapenko/.nvm/versions/node/v10.14.2/bin/node /Users/anatolijostapenko/bmstu/annihilators/program-4/index.js
+λ = [ 0 0 1 0 ]
+x1x2+x1x3+x2x3+x1x4+x2x4+x3x4+x1x5+x2x5+x3x5+x4x5+x1x6+x2x6+x3x6+x4x6+x5x6+x1x7+x2x7+x3x7+x4x7+x5x7+x6x7
+[ 0 0 0 0 0 0 0 0 ]
+[ 1 0 1 0 0 0 0 0 ]
+[ 0 1 0 1 0 0 0 0 ]
+[ 1 1 1 1 0 0 0 0 ]
+[ 0 0 0 0 1 0 1 0 ]
+[ 1 0 1 0 1 0 1 0 ]
+[ 0 1 0 1 1 0 1 0 ]
+[ 1 1 1 1 1 0 1 0 ]
+
+[ 0 0 0 0 0 1 0 1 ]
+[ 1 0 1 0 0 1 0 1 ]
+[ 0 1 0 1 0 1 0 1 ]
+[ 1 1 1 1 0 1 0 1 ]
+[ 0 0 0 0 1 1 1 1 ]
+[ 1 0 1 0 1 1 1 1 ]
+[ 0 1 0 1 1 1 1 1 ]
+[ 1 1 1 1 1 1 1 1 ]
+
+Найдено 16 полиномов
+program-4: 190.509ms
+
+Process finished with exit code 0
+
+
+
+
+/Users/anatolijostapenko/.nvm/versions/node/v10.14.2/bin/node /Users/anatolijostapenko/bmstu/annihilators/program-4/index.js
+λ = [ 1 0 1 0 ]
+1+x1x2+x1x3+x2x3+x1x4+x2x4+x3x4+x1x5+x2x5+x3x5+x4x5+x1x6+x2x6+x3x6+x4x6+x5x6+x1x7+x2x7+x3x7+x4x7+x5x7+x6x7
+[ 0 0 0 0 0 0 0 0 ]
+[ 0 0 1 0 0 0 0 0 ]
+[ 0 0 0 1 0 0 0 0 ]
+[ 0 0 1 1 0 0 0 0 ]
+[ 0 0 0 0 0 0 1 0 ]
+[ 0 0 1 0 0 0 1 0 ]
+[ 0 0 0 1 0 0 1 0 ]
+[ 0 0 1 1 0 0 1 0 ]
+
+[ 0 0 0 0 0 0 0 1 ]
+[ 0 0 1 0 0 0 0 1 ]
+[ 0 0 0 1 0 0 0 1 ]
+[ 0 0 1 1 0 0 0 1 ]
+[ 0 0 0 0 0 0 1 1 ]
+[ 0 0 1 0 0 0 1 1 ]
+[ 0 0 0 1 0 0 1 1 ]
+[ 0 0 1 1 0 0 1 1 ]
+
+Найдено 16 полиномов
+program-4: 200.209ms
+
+Process finished with exit code 0
+
+
+
+/Users/anatolijostapenko/.nvm/versions/node/v10.14.2/bin/node /Users/anatolijostapenko/bmstu/annihilators/program-4/index.js
+λ = [ 0 1 1 0 ]
+x1+x2+x1x2+x3+x1x3+x2x3+x4+x1x4+x2x4+x3x4+x5+x1x5+x2x5+x3x5+x4x5+x6+x1x6+x2x6+x3x6+x4x6+x5x6+x7+x1x7+x2x7+x3x7+x4x7+x5x7+x6x7
+[ 0 0 0 0 0 0 0 0 ]
+[ 1 1 1 0 0 0 0 0 ]
+[ 0 0 0 1 0 0 0 0 ]
+[ 1 1 1 1 0 0 0 0 ]
+[ 0 0 0 0 1 1 1 0 ]
+[ 1 1 1 0 1 1 1 0 ]
+[ 0 0 0 1 1 1 1 0 ]
+[ 1 1 1 1 1 1 1 0 ]
+
+[ 0 0 0 0 0 0 0 1 ]
+[ 1 1 1 0 0 0 0 1 ]
+[ 0 0 0 1 0 0 0 1 ]
+[ 1 1 1 1 0 0 0 1 ]
+[ 0 0 0 0 1 1 1 1 ]
+[ 1 1 1 0 1 1 1 1 ]
+[ 0 0 0 1 1 1 1 1 ]
+[ 1 1 1 1 1 1 1 1 ]
+
+Найдено 16 полиномов
+program-4: 190.494ms
+
+Process finished with exit code 0
+
+
+
+
+
+/Users/anatolijostapenko/.nvm/versions/node/v10.14.2/bin/node /Users/anatolijostapenko/bmstu/annihilators/program-4/index.js
+λ = [ 1 1 1 0 ]
+1+x1+x2+x1x2+x3+x1x3+x2x3+x4+x1x4+x2x4+x3x4+x5+x1x5+x2x5+x3x5+x4x5+x6+x1x6+x2x6+x3x6+x4x6+x5x6+x7+x1x7+x2x7+x3x7+x4x7+x5x7+x6x7
+[ 0 0 0 0 0 0 0 0 ]
+[ 0 1 1 0 0 0 0 0 ]
+[ 0 1 0 1 0 0 0 0 ]
+[ 0 0 1 1 0 0 0 0 ]
+[ 0 0 0 0 0 1 1 0 ]
+[ 0 1 1 0 0 1 1 0 ]
+[ 0 1 0 1 0 1 1 0 ]
+[ 0 0 1 1 0 1 1 0 ]
+
+[ 0 0 0 0 0 1 0 1 ]
+[ 0 1 1 0 0 1 0 1 ]
+[ 0 1 0 1 0 1 0 1 ]
+[ 0 0 1 1 0 1 0 1 ]
+[ 0 0 0 0 0 0 1 1 ]
+[ 0 1 1 0 0 0 1 1 ]
+[ 0 1 0 1 0 0 1 1 ]
+[ 0 0 1 1 0 0 1 1 ]
+
+Найдено 16 полиномов
+program-4: 216.450ms
+
+Process finished with exit code 0
+
+
+
+
+/Users/anatolijostapenko/.nvm/versions/node/v10.14.2/bin/node /Users/anatolijostapenko/bmstu/annihilators/program-4/index.js
+λ = [ 0 0 0 1 ]
+x1x2x3+x1x2x4+x1x3x4+x2x3x4+x1x2x5+x1x3x5+x2x3x5+x1x4x5+x2x4x5+x3x4x5+x1x2x6+x1x3x6+x2x3x6+x1x4x6+x2x4x6+x3x4x6+x1x5x6+x2x5x6+x3x5x6+x4x5x6+x1x2x7+x1x3x7+x2x3x7+x1x4x7+x2x4x7+x3x4x7+x1x5x7+x2x5x7+x3x5x7+x4x5x7+x1x6x7+x2x6x7+x3x6x7+x4x6x7+x5x6x7
+[ 0 0 0 0 0 0 0 0 ]
+[ 1 1 0 0 0 0 0 0 ]
+[ 1 0 1 0 0 0 0 0 ]
+[ 0 1 1 0 0 0 0 0 ]
+[ 1 0 0 1 0 0 0 0 ]
+[ 0 1 0 1 0 0 0 0 ]
+[ 0 0 1 1 0 0 0 0 ]
+[ 1 1 1 1 0 0 0 0 ]
+
+[ 0 0 0 0 1 1 0 0 ]
+[ 1 1 0 0 1 1 0 0 ]
+[ 1 0 1 0 1 1 0 0 ]
+[ 0 1 1 0 1 1 0 0 ]
+[ 1 0 0 1 1 1 0 0 ]
+[ 0 1 0 1 1 1 0 0 ]
+[ 0 0 1 1 1 1 0 0 ]
+[ 1 1 1 1 1 1 0 0 ]
+
+[ 0 0 0 0 1 0 1 0 ]
+[ 1 1 0 0 1 0 1 0 ]
+[ 1 0 1 0 1 0 1 0 ]
+[ 0 1 1 0 1 0 1 0 ]
+[ 1 0 0 1 1 0 1 0 ]
+[ 0 1 0 1 1 0 1 0 ]
+[ 0 0 1 1 1 0 1 0 ]
+[ 1 1 1 1 1 0 1 0 ]
+
+[ 0 0 0 0 0 1 1 0 ]
+[ 1 1 0 0 0 1 1 0 ]
+[ 1 0 1 0 0 1 1 0 ]
+[ 0 1 1 0 0 1 1 0 ]
+[ 1 0 0 1 0 1 1 0 ]
+[ 0 1 0 1 0 1 1 0 ]
+[ 0 0 1 1 0 1 1 0 ]
+[ 1 1 1 1 0 1 1 0 ]
+
+[ 0 0 0 0 1 0 0 1 ]
+[ 1 1 0 0 1 0 0 1 ]
+[ 1 0 1 0 1 0 0 1 ]
+[ 0 1 1 0 1 0 0 1 ]
+[ 1 0 0 1 1 0 0 1 ]
+[ 0 1 0 1 1 0 0 1 ]
+[ 0 0 1 1 1 0 0 1 ]
+[ 1 1 1 1 1 0 0 1 ]
+
+[ 0 0 0 0 0 1 0 1 ]
+[ 1 1 0 0 0 1 0 1 ]
+[ 1 0 1 0 0 1 0 1 ]
+[ 0 1 1 0 0 1 0 1 ]
+[ 1 0 0 1 0 1 0 1 ]
+[ 0 1 0 1 0 1 0 1 ]
+[ 0 0 1 1 0 1 0 1 ]
+[ 1 1 1 1 0 1 0 1 ]
+
+[ 0 0 0 0 0 0 1 1 ]
+[ 1 1 0 0 0 0 1 1 ]
+[ 1 0 1 0 0 0 1 1 ]
+[ 0 1 1 0 0 0 1 1 ]
+[ 1 0 0 1 0 0 1 1 ]
+[ 0 1 0 1 0 0 1 1 ]
+[ 0 0 1 1 0 0 1 1 ]
+[ 1 1 1 1 0 0 1 1 ]
+
+[ 0 0 0 0 1 1 1 1 ]
+[ 1 1 0 0 1 1 1 1 ]
+[ 1 0 1 0 1 1 1 1 ]
+[ 0 1 1 0 1 1 1 1 ]
+[ 1 0 0 1 1 1 1 1 ]
+[ 0 1 0 1 1 1 1 1 ]
+[ 0 0 1 1 1 1 1 1 ]
+[ 1 1 1 1 1 1 1 1 ]
+
+Найдено 64 полиномов
+program-4: 275.081ms
+
+Process finished with exit code 0
+
+
+
+/Users/anatolijostapenko/.nvm/versions/node/v10.14.2/bin/node /Users/anatolijostapenko/bmstu/annihilators/program-4/index.js
+λ = [ 1 0 0 1 ]
+1+x1x2x3+x1x2x4+x1x3x4+x2x3x4+x1x2x5+x1x3x5+x2x3x5+x1x4x5+x2x4x5+x3x4x5+x1x2x6+x1x3x6+x2x3x6+x1x4x6+x2x4x6+x3x4x6+x1x5x6+x2x5x6+x3x5x6+x4x5x6+x1x2x7+x1x3x7+x2x3x7+x1x4x7+x2x4x7+x3x4x7+x1x5x7+x2x5x7+x3x5x7+x4x5x7+x1x6x7+x2x6x7+x3x6x7+x4x6x7+x5x6x7
+[ 0 0 0 0 0 0 0 0 ]
+[ 0 0 0 1 0 0 0 0 ]
+[ 0 0 0 0 0 0 0 1 ]
+[ 0 0 0 1 0 0 0 1 ]
+Найдено 4 полиномов
+program-4: 223.189ms
+
+Process finished with exit code 0
+
+
+
+/Users/anatolijostapenko/.nvm/versions/node/v10.14.2/bin/node /Users/anatolijostapenko/bmstu/annihilators/program-4/index.js
+λ = [ 0 1 0 1 ]
+x1+x2+x3+x1x2x3+x4+x1x2x4+x1x3x4+x2x3x4+x5+x1x2x5+x1x3x5+x2x3x5+x1x4x5+x2x4x5+x3x4x5+x6+x1x2x6+x1x3x6+x2x3x6+x1x4x6+x2x4x6+x3x4x6+x1x5x6+x2x5x6+x3x5x6+x4x5x6+x7+x1x2x7+x1x3x7+x2x3x7+x1x4x7+x2x4x7+x3x4x7+x1x5x7+x2x5x7+x3x5x7+x4x5x7+x1x6x7+x2x6x7+x3x6x7+x4x6x7+x5x6x7
+[ 0 0 0 0 0 0 0 0 ]
+[ 1 1 0 0 0 0 0 0 ]
+[ 0 0 1 0 0 0 0 0 ]
+[ 1 1 1 0 0 0 0 0 ]
+[ 0 0 0 1 0 0 0 0 ]
+[ 1 1 0 1 0 0 0 0 ]
+[ 0 0 1 1 0 0 0 0 ]
+[ 1 1 1 1 0 0 0 0 ]
+
+[ 0 0 0 0 1 1 0 0 ]
+[ 1 1 0 0 1 1 0 0 ]
+[ 0 0 1 0 1 1 0 0 ]
+[ 1 1 1 0 1 1 0 0 ]
+[ 0 0 0 1 1 1 0 0 ]
+[ 1 1 0 1 1 1 0 0 ]
+[ 0 0 1 1 1 1 0 0 ]
+[ 1 1 1 1 1 1 0 0 ]
+
+[ 0 0 0 0 0 0 1 0 ]
+[ 1 1 0 0 0 0 1 0 ]
+[ 0 0 1 0 0 0 1 0 ]
+[ 1 1 1 0 0 0 1 0 ]
+[ 0 0 0 1 0 0 1 0 ]
+[ 1 1 0 1 0 0 1 0 ]
+[ 0 0 1 1 0 0 1 0 ]
+[ 1 1 1 1 0 0 1 0 ]
+
+[ 0 0 0 0 1 1 1 0 ]
+[ 1 1 0 0 1 1 1 0 ]
+[ 0 0 1 0 1 1 1 0 ]
+[ 1 1 1 0 1 1 1 0 ]
+[ 0 0 0 1 1 1 1 0 ]
+[ 1 1 0 1 1 1 1 0 ]
+[ 0 0 1 1 1 1 1 0 ]
+[ 1 1 1 1 1 1 1 0 ]
+
+[ 0 0 0 0 0 0 0 1 ]
+[ 1 1 0 0 0 0 0 1 ]
+[ 0 0 1 0 0 0 0 1 ]
+[ 1 1 1 0 0 0 0 1 ]
+[ 0 0 0 1 0 0 0 1 ]
+[ 1 1 0 1 0 0 0 1 ]
+[ 0 0 1 1 0 0 0 1 ]
+[ 1 1 1 1 0 0 0 1 ]
+
+[ 0 0 0 0 1 1 0 1 ]
+[ 1 1 0 0 1 1 0 1 ]
+[ 0 0 1 0 1 1 0 1 ]
+[ 1 1 1 0 1 1 0 1 ]
+[ 0 0 0 1 1 1 0 1 ]
+[ 1 1 0 1 1 1 0 1 ]
+[ 0 0 1 1 1 1 0 1 ]
+[ 1 1 1 1 1 1 0 1 ]
+
+[ 0 0 0 0 0 0 1 1 ]
+[ 1 1 0 0 0 0 1 1 ]
+[ 0 0 1 0 0 0 1 1 ]
+[ 1 1 1 0 0 0 1 1 ]
+[ 0 0 0 1 0 0 1 1 ]
+[ 1 1 0 1 0 0 1 1 ]
+[ 0 0 1 1 0 0 1 1 ]
+[ 1 1 1 1 0 0 1 1 ]
+
+[ 0 0 0 0 1 1 1 1 ]
+[ 1 1 0 0 1 1 1 1 ]
+[ 0 0 1 0 1 1 1 1 ]
+[ 1 1 1 0 1 1 1 1 ]
+[ 0 0 0 1 1 1 1 1 ]
+[ 1 1 0 1 1 1 1 1 ]
+[ 0 0 1 1 1 1 1 1 ]
+[ 1 1 1 1 1 1 1 1 ]
+
+Найдено 64 полиномов
+program-4: 187.393ms
+
+Process finished with exit code 0
+
+
+
+
+/Users/anatolijostapenko/.nvm/versions/node/v10.14.2/bin/node /Users/anatolijostapenko/bmstu/annihilators/program-4/index.js
+λ = [ 1 1 0 1 ]
+1+x1+x2+x3+x1x2x3+x4+x1x2x4+x1x3x4+x2x3x4+x5+x1x2x5+x1x3x5+x2x3x5+x1x4x5+x2x4x5+x3x4x5+x6+x1x2x6+x1x3x6+x2x3x6+x1x4x6+x2x4x6+x3x4x6+x1x5x6+x2x5x6+x3x5x6+x4x5x6+x7+x1x2x7+x1x3x7+x2x3x7+x1x4x7+x2x4x7+x3x4x7+x1x5x7+x2x5x7+x3x5x7+x4x5x7+x1x6x7+x2x6x7+x3x6x7+x4x6x7+x5x6x7
+[ 0 0 0 0 0 0 0 0 ]
+[ 0 1 0 1 0 0 0 0 ]
+[ 0 0 0 0 0 1 0 1 ]
+[ 0 1 0 1 0 1 0 1 ]
+Найдено 4 полиномов
+program-4: 189.126ms
+
+Process finished with exit code 0
+
+
+
+
+/Users/anatolijostapenko/.nvm/versions/node/v10.14.2/bin/node /Users/anatolijostapenko/bmstu/annihilators/program-4/index.js
+λ = [ 0 0 1 1 ]
+x1x2+x1x3+x2x3+x1x2x3+x1x4+x2x4+x1x2x4+x3x4+x1x3x4+x2x3x4+x1x5+x2x5+x1x2x5+x3x5+x1x3x5+x2x3x5+x4x5+x1x4x5+x2x4x5+x3x4x5+x1x6+x2x6+x1x2x6+x3x6+x1x3x6+x2x3x6+x4x6+x1x4x6+x2x4x6+x3x4x6+x5x6+x1x5x6+x2x5x6+x3x5x6+x4x5x6+x1x7+x2x7+x1x2x7+x3x7+x1x3x7+x2x3x7+x4x7+x1x4x7+x2x4x7+x3x4x7+x5x7+x1x5x7+x2x5x7+x3x5x7+x4x5x7+x6x7+x1x6x7+x2x6x7+x3x6x7+x4x6x7+x5x6x7
+[ 0 0 0 0 0 0 0 0 ]
+[ 0 1 0 0 0 0 0 0 ]
+[ 1 0 1 0 0 0 0 0 ]
+[ 1 1 1 0 0 0 0 0 ]
+[ 0 0 0 1 0 0 0 0 ]
+[ 0 1 0 1 0 0 0 0 ]
+[ 1 0 1 1 0 0 0 0 ]
+[ 1 1 1 1 0 0 0 0 ]
+
+[ 0 0 0 0 0 1 0 0 ]
+[ 0 1 0 0 0 1 0 0 ]
+[ 1 0 1 0 0 1 0 0 ]
+[ 1 1 1 0 0 1 0 0 ]
+[ 0 0 0 1 0 1 0 0 ]
+[ 0 1 0 1 0 1 0 0 ]
+[ 1 0 1 1 0 1 0 0 ]
+[ 1 1 1 1 0 1 0 0 ]
+
+[ 0 0 0 0 1 0 1 0 ]
+[ 0 1 0 0 1 0 1 0 ]
+[ 1 0 1 0 1 0 1 0 ]
+[ 1 1 1 0 1 0 1 0 ]
+[ 0 0 0 1 1 0 1 0 ]
+[ 0 1 0 1 1 0 1 0 ]
+[ 1 0 1 1 1 0 1 0 ]
+[ 1 1 1 1 1 0 1 0 ]
+
+[ 0 0 0 0 1 1 1 0 ]
+[ 0 1 0 0 1 1 1 0 ]
+[ 1 0 1 0 1 1 1 0 ]
+[ 1 1 1 0 1 1 1 0 ]
+[ 0 0 0 1 1 1 1 0 ]
+[ 0 1 0 1 1 1 1 0 ]
+[ 1 0 1 1 1 1 1 0 ]
+[ 1 1 1 1 1 1 1 0 ]
+
+[ 0 0 0 0 0 0 0 1 ]
+[ 0 1 0 0 0 0 0 1 ]
+[ 1 0 1 0 0 0 0 1 ]
+[ 1 1 1 0 0 0 0 1 ]
+[ 0 0 0 1 0 0 0 1 ]
+[ 0 1 0 1 0 0 0 1 ]
+[ 1 0 1 1 0 0 0 1 ]
+[ 1 1 1 1 0 0 0 1 ]
+
+[ 0 0 0 0 0 1 0 1 ]
+[ 0 1 0 0 0 1 0 1 ]
+[ 1 0 1 0 0 1 0 1 ]
+[ 1 1 1 0 0 1 0 1 ]
+[ 0 0 0 1 0 1 0 1 ]
+[ 0 1 0 1 0 1 0 1 ]
+[ 1 0 1 1 0 1 0 1 ]
+[ 1 1 1 1 0 1 0 1 ]
+
+[ 0 0 0 0 1 0 1 1 ]
+[ 0 1 0 0 1 0 1 1 ]
+[ 1 0 1 0 1 0 1 1 ]
+[ 1 1 1 0 1 0 1 1 ]
+[ 0 0 0 1 1 0 1 1 ]
+[ 0 1 0 1 1 0 1 1 ]
+[ 1 0 1 1 1 0 1 1 ]
+[ 1 1 1 1 1 0 1 1 ]
+
+[ 0 0 0 0 1 1 1 1 ]
+[ 0 1 0 0 1 1 1 1 ]
+[ 1 0 1 0 1 1 1 1 ]
+[ 1 1 1 0 1 1 1 1 ]
+[ 0 0 0 1 1 1 1 1 ]
+[ 0 1 0 1 1 1 1 1 ]
+[ 1 0 1 1 1 1 1 1 ]
+[ 1 1 1 1 1 1 1 1 ]
+
+Найдено 64 полиномов
+program-4: 237.537ms
+
+Process finished with exit code 0
+
+
+
+
+/Users/anatolijostapenko/.nvm/versions/node/v10.14.2/bin/node /Users/anatolijostapenko/bmstu/annihilators/program-4/index.js
+λ = [ 1 0 1 1 ]
+1+x1x2+x1x3+x2x3+x1x2x3+x1x4+x2x4+x1x2x4+x3x4+x1x3x4+x2x3x4+x1x5+x2x5+x1x2x5+x3x5+x1x3x5+x2x3x5+x4x5+x1x4x5+x2x4x5+x3x4x5+x1x6+x2x6+x1x2x6+x3x6+x1x3x6+x2x3x6+x4x6+x1x4x6+x2x4x6+x3x4x6+x5x6+x1x5x6+x2x5x6+x3x5x6+x4x5x6+x1x7+x2x7+x1x2x7+x3x7+x1x3x7+x2x3x7+x4x7+x1x4x7+x2x4x7+x3x4x7+x5x7+x1x5x7+x2x5x7+x3x5x7+x4x5x7+x6x7+x1x6x7+x2x6x7+x3x6x7+x4x6x7+x5x6x7
+[ 0 0 0 0 0 0 0 0 ]
+[ 0 0 1 1 0 0 0 0 ]
+[ 0 0 0 0 0 0 1 1 ]
+[ 0 0 1 1 0 0 1 1 ]
+Найдено 4 полиномов
+program-4: 204.944ms
+
+Process finished with exit code 0
+
+
+
+
+/Users/anatolijostapenko/.nvm/versions/node/v10.14.2/bin/node /Users/anatolijostapenko/bmstu/annihilators/program-4/index.js
+λ = [ 0 1 1 1 ]
+x1+x2+x1x2+x3+x1x3+x2x3+x1x2x3+x4+x1x4+x2x4+x1x2x4+x3x4+x1x3x4+x2x3x4+x5+x1x5+x2x5+x1x2x5+x3x5+x1x3x5+x2x3x5+x4x5+x1x4x5+x2x4x5+x3x4x5+x6+x1x6+x2x6+x1x2x6+x3x6+x1x3x6+x2x3x6+x4x6+x1x4x6+x2x4x6+x3x4x6+x5x6+x1x5x6+x2x5x6+x3x5x6+x4x5x6+x7+x1x7+x2x7+x1x2x7+x3x7+x1x3x7+x2x3x7+x4x7+x1x4x7+x2x4x7+x3x4x7+x5x7+x1x5x7+x2x5x7+x3x5x7+x4x5x7+x6x7+x1x6x7+x2x6x7+x3x6x7+x4x6x7+x5x6x7
+[ 0 0 0 0 0 0 0 0 ]
+[ 1 1 1 1 0 0 0 0 ]
+[ 0 0 0 0 1 1 1 1 ]
+[ 1 1 1 1 1 1 1 1 ]
+Найдено 4 полиномов
+program-4: 208.063ms
+
+Process finished with exit code 0
+
+
+
+/Users/anatolijostapenko/.nvm/versions/node/v10.14.2/bin/node /Users/anatolijostapenko/bmstu/annihilators/program-4/index.js
+λ = [ 1 1 1 1 ]
+1+x1+x2+x1x2+x3+x1x3+x2x3+x1x2x3+x4+x1x4+x2x4+x1x2x4+x3x4+x1x3x4+x2x3x4+x5+x1x5+x2x5+x1x2x5+x3x5+x1x3x5+x2x3x5+x4x5+x1x4x5+x2x4x5+x3x4x5+x6+x1x6+x2x6+x1x2x6+x3x6+x1x3x6+x2x3x6+x4x6+x1x4x6+x2x4x6+x3x4x6+x5x6+x1x5x6+x2x5x6+x3x5x6+x4x5x6+x7+x1x7+x2x7+x1x2x7+x3x7+x1x3x7+x2x3x7+x4x7+x1x4x7+x2x4x7+x3x4x7+x5x7+x1x5x7+x2x5x7+x3x5x7+x4x5x7+x6x7+x1x6x7+x2x6x7+x3x6x7+x4x6x7+x5x6x7
+[ 0 0 0 0 0 0 0 0 ]
+[ 0 1 0 0 0 0 0 0 ]
+[ 0 0 1 0 0 0 0 0 ]
+[ 0 1 1 0 0 0 0 0 ]
+[ 0 0 0 1 0 0 0 0 ]
+[ 0 1 0 1 0 0 0 0 ]
+[ 0 0 1 1 0 0 0 0 ]
+[ 0 1 1 1 0 0 0 0 ]
+
+[ 0 0 0 0 0 1 0 0 ]
+[ 0 1 0 0 0 1 0 0 ]
+[ 0 0 1 0 0 1 0 0 ]
+[ 0 1 1 0 0 1 0 0 ]
+[ 0 0 0 1 0 1 0 0 ]
+[ 0 1 0 1 0 1 0 0 ]
+[ 0 0 1 1 0 1 0 0 ]
+[ 0 1 1 1 0 1 0 0 ]
+
+[ 0 0 0 0 0 0 1 0 ]
+[ 0 1 0 0 0 0 1 0 ]
+[ 0 0 1 0 0 0 1 0 ]
+[ 0 1 1 0 0 0 1 0 ]
+[ 0 0 0 1 0 0 1 0 ]
+[ 0 1 0 1 0 0 1 0 ]
+[ 0 0 1 1 0 0 1 0 ]
+[ 0 1 1 1 0 0 1 0 ]
+
+[ 0 0 0 0 0 1 1 0 ]
+[ 0 1 0 0 0 1 1 0 ]
+[ 0 0 1 0 0 1 1 0 ]
+[ 0 1 1 0 0 1 1 0 ]
+[ 0 0 0 1 0 1 1 0 ]
+[ 0 1 0 1 0 1 1 0 ]
+[ 0 0 1 1 0 1 1 0 ]
+[ 0 1 1 1 0 1 1 0 ]
+
+[ 0 0 0 0 0 0 0 1 ]
+[ 0 1 0 0 0 0 0 1 ]
+[ 0 0 1 0 0 0 0 1 ]
+[ 0 1 1 0 0 0 0 1 ]
+[ 0 0 0 1 0 0 0 1 ]
+[ 0 1 0 1 0 0 0 1 ]
+[ 0 0 1 1 0 0 0 1 ]
+[ 0 1 1 1 0 0 0 1 ]
+
+[ 0 0 0 0 0 1 0 1 ]
+[ 0 1 0 0 0 1 0 1 ]
+[ 0 0 1 0 0 1 0 1 ]
+[ 0 1 1 0 0 1 0 1 ]
+[ 0 0 0 1 0 1 0 1 ]
+[ 0 1 0 1 0 1 0 1 ]
+[ 0 0 1 1 0 1 0 1 ]
+[ 0 1 1 1 0 1 0 1 ]
+
+[ 0 0 0 0 0 0 1 1 ]
+[ 0 1 0 0 0 0 1 1 ]
+[ 0 0 1 0 0 0 1 1 ]
+[ 0 1 1 0 0 0 1 1 ]
+[ 0 0 0 1 0 0 1 1 ]
+[ 0 1 0 1 0 0 1 1 ]
+[ 0 0 1 1 0 0 1 1 ]
+[ 0 1 1 1 0 0 1 1 ]
+
+[ 0 0 0 0 0 1 1 1 ]
+[ 0 1 0 0 0 1 1 1 ]
+[ 0 0 1 0 0 1 1 1 ]
+[ 0 1 1 0 0 1 1 1 ]
+[ 0 0 0 1 0 1 1 1 ]
+[ 0 1 0 1 0 1 1 1 ]
+[ 0 0 1 1 0 1 1 1 ]
+[ 0 1 1 1 0 1 1 1 ]
+
+Найдено 64 полиномов
+program-4: 221.689ms
+
+Process finished with exit code 0
+

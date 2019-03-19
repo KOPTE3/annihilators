@@ -111,11 +111,11 @@ export default class Polynomial {
 		}
 	}
 
-	static* SymmetricVectors(size: number) {
+	static* SymmetricVectors(size: number, begin?: number) {
 		assert.ok(size > 0);
 		assert.ok(size < 32);
 
-		let bitmask = 1;
+		let bitmask = typeof begin === 'number' ? begin : 1;
 		const length = size + 1;
 
 		const bits: number[] = [];
