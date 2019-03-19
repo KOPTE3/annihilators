@@ -38,9 +38,9 @@ for (let vector of generator2) {
 				degCount[deg]++;
 
 				all++;
-				if (p.isZero()) {
-					zeros++;
-				}
+				// if (p.isZero()) {
+				// 	zeros++;
+				// }
 			}
 		}
 
@@ -55,9 +55,9 @@ for (let polynomial1 of deg1) {
 		degCount[deg]++;
 
 		all++;
-		if (p.isZero()) {
-			zeros++;
-		}
+		// if (p.isZero()) {
+		// 	zeros++;
+		// }
 	}
 }
 
