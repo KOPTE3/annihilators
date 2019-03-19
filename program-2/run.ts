@@ -140,11 +140,11 @@ const tableData = stats.map(function (item): any {
 	return o;
 });
 
-// console.table(tableData, [R2, R3, R4, R5, R6]);
+console.table(tableData, [R2, R3, R4, R5, R6]);
 
-// for (let stat of stats) {
-// 	console.log(stat.symmetricVector, `${stat.checkA ? 'A' : ' '}${stat.checkB ? 'B' : ' '}`, stat.annihilators.length);
-// }
+for (let stat of stats) {
+	console.log(stat.symmetricVector, `${stat.checkA ? 'A' : ' '}${stat.checkB ? 'B' : ' '}`, stat.annihilators.length);
+}
 
 console.log(`\n\n### Симметрические полиномы, которые нарушают условия теорем ###\n`);
 
@@ -161,10 +161,10 @@ for (let stat of stats) {
 			array.push(strs.splice(0, 4));
 		}
 
-		// console.log(columnify(array, {
-		// 	showHeaders: false,
-		// 	columnSplitter: '     '
-		// }));
+		console.log(columnify(array, {
+			showHeaders: false,
+			columnSplitter: '     '
+		}));
 		console.log('');
 	}
 }
