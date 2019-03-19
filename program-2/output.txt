@@ -1,0 +1,28 @@
+/Users/anatolijostapenko/.nvm/versions/node/v10.14.2/bin/node /Users/anatolijostapenko/bmstu/annihilators/program-2/index.js
+sigma1 x1+x2+x3+x4+x5+x6+x7+x8+x9+x10
+sigma01 1+x1+x2+x3+x4+x5+x6+x7+x8+x9+x10
+[ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 ]
+{ checkA: true,
+  checkB: false,
+  theoremA: false,
+  theoremB: true,
+  annL: 511 }
+
+[ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 ]
+{ checkA: true,
+  checkB: false,
+  theoremA: false,
+  theoremB: true,
+  annL: 1023 }
+
+[ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ]
+{ checkA: true,
+  checkB: false,
+  theoremA: false,
+  theoremB: true,
+  annL: 1023 }
+
+program-2: 665344.021ms
+Found 2046 linear vectors
+
+Process finished with exit code 0
