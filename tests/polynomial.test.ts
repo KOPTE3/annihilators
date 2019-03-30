@@ -133,7 +133,6 @@ test('#DegVectors', function () {
 		vectors2.push(degVector.slice());
 	}
 
-	console.dir(vectors2);
 	expect(vectors2).toEqual([
 		[0, 1, 0, 0, 0, 0, 0, 0],
 		[1, 1, 0, 0, 0, 0, 0, 0],

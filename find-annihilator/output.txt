@@ -1,0 +1,9 @@
+/Users/anatolijostapenko/.nvm/versions/node/v10.14.2/bin/node /Users/anatolijostapenko/bmstu/annihilators/find-annihilator/index.js
+N = 6
+f(x) = x1x2x3x4+x1x2x3x5+x1x2x4x5+x1x3x4x5+x2x3x4x5+x1x2x3x6+x1x2x4x6+x1x3x4x6+x2x3x4x6+x1x2x5x6+x1x3x5x6+x2x3x5x6+x1x4x5x6+x2x4x5x6+x3x4x5x6
+Проверяем полиномы степени 1
+Проверка полиномов степени 1: 2.649ms
+Проверяем полиномы степени 2
+Проверка полиномов степени 2: 2923.861ms
+
+Process finished with exit code 0
