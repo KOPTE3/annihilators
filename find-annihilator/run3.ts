@@ -56,6 +56,3 @@ console.dir({weight, zeros: 2 ** 8 - weight});
 
 const count = BigInt(2).pow(2 ** 8 - weight);
 console.log(count);
-
-
-1844674407370 min

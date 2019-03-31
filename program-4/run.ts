@@ -1,6 +1,6 @@
 import Polynomial from '../core/polynomial';
 
-const SIZE = 7;
+const SIZE = 11;
 
 const multiplierVector: number[] = (new Array(SIZE + 1)).fill(0);
 const lambda = [ 1, 1, 1, 1 ];
