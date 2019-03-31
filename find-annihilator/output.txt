@@ -127,3 +127,6 @@ f(x) + 1 = 1+x1x2x3x4+x1x2x3x5+x1x2x4x5+x1x3x4x5+x2x3x4x5+x1x2x3x6+x1x2x4x6+x1x3
 Проверяем полиномы степени 3 (всего 18446744073172680704)
 
 Process finished with exit code 130 (interrupted by signal 2: SIGINT)
+
+18 446 744 073 172 680 704
+18 446 744 073 709 551 616n

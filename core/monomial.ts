@@ -80,6 +80,18 @@ export default class Monomial {
 		return string;
 	}
 
+	toBoolean(): string {
+		const v = this.vector;
+		let strings: string[] = [];
+		for (let i = 0; i < this.size; i++) {
+			if (v[i]) {
+				strings.push(`x${i + 1}`);
+			}
+		}
+
+		return strings.join('*') || '1';
+	}
+
 	toTex(): string {
 		const v = this.vector;
 		let string = '';

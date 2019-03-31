@@ -353,6 +353,23 @@ export default class Polynomial {
 		return string;
 	}
 
+	toBoolean(): string {
+		let string = '';
+		let parts: string[] = [];
+
+		for (let i = 0; i < this.length; i++) {
+			if (this.vector[i]) {
+				parts.push(`(${Monomial.from(i, this.size).toBoolean()})`);
+			}
+		}
+
+		string = parts.join('+');
+
+		string = string || '0';
+
+		return string;
+	}
+
 	toTex(): string {
 		let string = '';
 		let parts: string[] = [];
