@@ -3,6 +3,8 @@ import Monomial from './monomial';
 import {bitCount} from './utils/bit-count';
 import {perf, perfEnd} from './utils/perf';
 import {binomials} from './utils/binomials';
+import * as BigInt from 'big-integer';
+import BitCounter from './BitCounter';
 
 export default class Polynomial {
 	public vector: number[] = [];
@@ -82,13 +84,16 @@ export default class Polynomial {
 			}
 
 		}
+
+		// console.dir({fromIndex, toIndex, length});
+
 		const vector: number[] = (new Array(length)).fill(0);
 		vector[fromIndex] = 1;
 
 		const maps = Monomial.GenerateSortedMap(size);
 
+		const mappedVector: number[] = (new Array(length)).fill(0);
 		function m(initialVector: number[]): number[] {
-			const mappedVector: number[] = (new Array(length)).fill(0);
 			initialVector.forEach((value, position) => mappedVector[maps.sortedToOrdered[position]] = value);
 			return mappedVector;
 		}
@@ -108,6 +113,67 @@ export default class Polynomial {
 					break;
 				}
 			}
+		}
+	}
+
+	static CountDegVectors(size: number, deg: number): BigInt.BigInteger {
+		const partSizes = binomials(size);
+		let fromIndex = 0;
+		let toIndex = 0;
+		for (let i = 0; i <= deg; i++) {
+			if (i < deg) {
+				fromIndex += partSizes[i];
+			}
+			if (i <= deg) {
+				toIndex += partSizes[i];
+			}
+
+		}
+		console.dir({fromIndex, toIndex});
+
+		return BigInt(2).pow(toIndex).minus(BigInt(2).pow(fromIndex));
+	}
+
+	static* FastDegVectors(size: number, deg: number, mapped?: boolean) {
+		const length = Math.pow(2, size);
+		const partSizes = binomials(size);
+		let fromIndex = 0;
+		let toIndex = 0;
+		for (let i = 0; i <= deg; i++) {
+			if (i < deg) {
+				fromIndex += partSizes[i];
+			}
+			if (i <= deg) {
+				toIndex += partSizes[i];
+			}
+		}
+
+		console.dir({fromIndex, toIndex});
+
+		const maps = Monomial.GenerateSortedMap(size);
+		const counter = new BitCounter({from: fromIndex, to: toIndex});
+
+		function m(initialVector: number[]): number[] {
+			const mappedVector: number[] = (new Array(length)).fill(0);
+			initialVector.forEach((value, position) => mappedVector[maps.sortedToOrdered[position]] = value);
+			return mappedVector;
+		}
+
+		function pad(initialVector: number[]) {
+			const mappedVector: number[] = (new Array(length)).fill(0);
+			initialVector.forEach((value, position) => mappedVector[position] = value);
+			return mappedVector;
+		}
+
+		while (counter.hasNext()) {
+			const vector = counter.toBitArray().slice(0, length);
+			if (mapped) {
+				yield m(vector);
+			} else {
+				yield pad(vector);
+			}
+
+			counter.addOne();
 		}
 	}
 
