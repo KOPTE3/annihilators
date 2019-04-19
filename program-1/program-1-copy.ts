@@ -1,7 +1,7 @@
 import Polynomial from '../core/polynomial';
 import PolynomialMatrix from '../core/polynomial-matrix';
 
-const SIZE = 10;
+const SIZE = 11;
 const matrix = new PolynomialMatrix(SIZE);
 
 console.log(`n =`, SIZE);

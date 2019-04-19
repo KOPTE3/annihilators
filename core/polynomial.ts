@@ -205,7 +205,7 @@ export default class Polynomial {
 		assert.ok(size > 0);
 		assert.ok(size < 32);
 
-		let bitmask = 2;
+		let bitmask = 276;
 		const length = size + 1;
 
 		const bits: number[] = [];
