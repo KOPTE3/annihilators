@@ -35,6 +35,41 @@ test('#calculate', function () {
 	]);
 });
 
+test('#calculateSymmetric', function () {
+	const pmActual = new PolynomialMatrix(2);
+	const pmExpected = new PolynomialMatrix(2);
+
+	pmActual.calculateSymmetric([1, 0, 0]);
+	pmExpected.calculate(Polynomial.symmetric(2, [1, 0, 0]));
+
+	expect(pmActual.matrix.toArray()).toEqual(pmExpected.matrix.toArray());
+
+	pmActual.calculateSymmetric([0, 1, 0]);
+	pmExpected.calculate(Polynomial.symmetric(2, [0, 1, 0]));
+
+	expect(pmActual.matrix.toArray()).toEqual(pmExpected.matrix.toArray());
+
+	pmActual.calculateSymmetric([0, 1, 1]);
+	pmExpected.calculate(Polynomial.symmetric(2, [0, 1, 1]));
+
+	expect(pmActual.matrix.toArray()).toEqual(pmExpected.matrix.toArray());
+
+	pmActual.calculateSymmetric([1, 0, 1]);
+	pmExpected.calculate(Polynomial.symmetric(2, [1, 0, 1]));
+
+	expect(pmActual.matrix.toArray()).toEqual(pmExpected.matrix.toArray());
+
+
+	const pmActualBig = new PolynomialMatrix(4);
+	const pmExpectedBig = new PolynomialMatrix(4);
+
+	pmActualBig.calculateSymmetric([1, 0, 0, 1, 1]);
+	pmExpectedBig.calculate(Polynomial.symmetric(4, [1, 0, 0, 1, 1]));
+
+	expect(pmActualBig.matrix.toArray()).toEqual(pmExpectedBig.matrix.toArray());
+});
+
+
 test('#plusOne', function () {
 	const pm = new PolynomialMatrix(2);
 

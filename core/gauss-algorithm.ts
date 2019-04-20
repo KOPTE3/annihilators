@@ -4,7 +4,7 @@ import * as math from 'mathjs';
 
 
 function hasOnes(matrix: number[][], column: number, fromrow: number): number {
-	assert.ok(fromrow < matrix.length);
+	// assert.ok(fromrow < matrix.length);
 	for (let row = fromrow; row < matrix.length; row++) {
 		if (matrix[row][column] > 0) {
 			return row;
@@ -26,7 +26,7 @@ function swapRows(matrix: number[][], r1: number, r2: number): number[][] {
 }
 
 function sumRows(matrix: number[][], targetRow: number, otherRow: number): number[][] {
-	assert.strictEqual(matrix[targetRow].length, matrix[otherRow].length);
+	// assert.strictEqual(matrix[targetRow].length, matrix[otherRow].length);
 	for (let column = 0; column < matrix[targetRow].length; column++) {
 		matrix[targetRow][column] += matrix[otherRow][column];
 
@@ -38,11 +38,11 @@ function sumRows(matrix: number[][], targetRow: number, otherRow: number): numbe
 
 export default function gaussAlgorithm(matrix: Matrix): Matrix {
 	const dimensions = matrix.size();
-	assert.ok(dimensions.length === 2);
+	// assert.ok(dimensions.length === 2);
 	const [rows, columns] = dimensions;
 
-	const clone = matrix.clone();
-	const array: number[][] = clone.toArray() as any;
+	// const clone = matrix.clone();
+	const array: number[][] = matrix.toArray() as any;
 
 	let currentRow = 0;
 	for (let column = 0; column < columns; column++) {
