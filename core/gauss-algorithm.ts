@@ -25,9 +25,9 @@ function swapRows(matrix: number[][], r1: number, r2: number): number[][] {
 	return matrix;
 }
 
-function sumRows(matrix: number[][], targetRow: number, otherRow: number): number[][] {
+function sumRows(matrix: number[][], targetRow: number, otherRow: number, fromcolumn = 0): number[][] {
 	// assert.strictEqual(matrix[targetRow].length, matrix[otherRow].length);
-	for (let column = 0; column < matrix[targetRow].length; column++) {
+	for (let column = fromcolumn; column < matrix[targetRow].length; column++) {
 		matrix[targetRow][column] += matrix[otherRow][column];
 
 		matrix[targetRow][column] %= 2;
@@ -36,15 +36,12 @@ function sumRows(matrix: number[][], targetRow: number, otherRow: number): numbe
 	return matrix;
 }
 
-export default function gaussAlgorithm(matrix: Matrix): Matrix {
-	const dimensions = matrix.size();
-	// assert.ok(dimensions.length === 2);
-	const [rows, columns] = dimensions;
-
-	// const clone = matrix.clone();
-	const array: number[][] = matrix.toArray() as any;
+export default function gaussAlgorithm(array: number[][]): {m:number[][]; r:number} {
+	const rows = array.length;
+	const columns = array[0].length;
 
 	let currentRow = 0;
+	let nonZerosLine = -1;
 	for (let column = 0; column < columns; column++) {
 		if (currentRow >= rows) {
 			break;
@@ -55,20 +52,21 @@ export default function gaussAlgorithm(matrix: Matrix): Matrix {
 		}
 
 		swapRows(array, oneRow, currentRow);
+		nonZerosLine = currentRow;
 		for (let row = 0; row < rows; row++) {
 			if (row === currentRow) {
 				continue;
 			}
 
 			if (array[row][column] === 1) {
-				sumRows(array, row, currentRow);
+				sumRows(array, row, currentRow, column);
 			}
 		}
 
 		currentRow++;
 	}
 
-	return math.matrix(array);
+	return {m: array, r: nonZerosLine + 1};
 }
 
 export function rank(matrix: Matrix): number {

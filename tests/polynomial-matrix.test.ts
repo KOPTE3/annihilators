@@ -110,3 +110,17 @@ test('#af', function () {
 	pm.calculate(p1);
 	expect(pm.af.bind(pm)).toThrow();
 });
+
+// 24.766s -> 13.763s
+test('#af-hard', function () {
+	const kv = [ 0, 0, 0, 0, 0, 1, 1, 1, 1, 0 ];
+	const size = 9;
+
+	const p = Polynomial.symmetric(size, kv);
+	const pm = new PolynomialMatrix(size);
+
+	pm.calculate(p);
+	const af = pm.af();
+
+	expect(af).toBe(5);
+});

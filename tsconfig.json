@@ -1,6 +1,7 @@
 {
 	"compilerOptions": {
-		"typeRoots": [
+    "outDir": "compiled",
+    "typeRoots": [
 			"./node_modules/@types",
 			"./types"
 		],

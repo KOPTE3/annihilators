@@ -1,7 +1,7 @@
 import Polynomial from '../core/polynomial';
 import PolynomialMatrix from '../core/polynomial-matrix';
 
-const SIZE = 10;
+const SIZE = 9;
 const matrix = new PolynomialMatrix(SIZE);
 
 console.log(`n =`, SIZE);
@@ -10,20 +10,20 @@ console.time('program-1');
 const stats = new Map();
 let checked = 0;
 for (let symmetricVector of Polynomial.SymmetricVectors2(SIZE)) {
+	checked++;
 	const polynomial = Polynomial.symmetric(SIZE, symmetricVector);
 
 	matrix.calculate(polynomial);
 	const af0 = matrix.af();
 
-	if (af0 < 4) {
-		continue;
-	}
+	// if (af0 < 4) {
+	// 	continue;
+	// }
 
 	matrix.plusOne();
 	const af1 = matrix.af();
 
 	const min = Math.min(af0, af1);
-	checked++;
 	const value = stats.get(min);
 	stats.set(min, (value || 0) + 1);
 

@@ -8,7 +8,9 @@ const matrix = math.matrix([
 	[1,0,1,1],
 ]);
 
+// @ts-ignore
 const m = gaussAlgorithm(matrix);
+// @ts-ignore
 const arr: number[][] = m.toArray() as any;
 for (let row = 0; row < arr.length; row++) {
 	const column = arr[row];

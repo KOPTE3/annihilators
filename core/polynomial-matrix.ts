@@ -134,10 +134,17 @@ export default class PolynomialMatrix {
 		const subarray: number[][] = [];
 
 		for (let row = 0; row < this.length; row++) {
-			subarray.push(array[row]);
+			subarray.unshift(array[row]);
 
-			const trapezoidMatrix = gaussAlgorithm(math.matrix(subarray));
-			const r = rank(trapezoidMatrix);
+			// console.log('matrix');
+
+			// subarray.forEach(function (arr) {
+			// 	console.log(arr.join(' '));
+			// });
+
+			const {r} = gaussAlgorithm(subarray);
+
+			// console.log('rank', r);
 
 			if (r < row + 1) {
 				return row + 1;

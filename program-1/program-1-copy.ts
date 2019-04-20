@@ -1,7 +1,7 @@
 import Polynomial from '../core/polynomial';
 import PolynomialMatrix from '../core/polynomial-matrix';
 
-const SIZE = 8;
+const SIZE = 9;
 const matrix = new PolynomialMatrix(SIZE);
 
 console.log(`n =`, SIZE);
@@ -10,6 +10,8 @@ console.time('program-1');
 const stats = new Map();
 let checked = 0;
 for (let symmetricVector of Polynomial.SymmetricVectors2(SIZE)) {
+	// console.log(symmetricVector.join(' ') + ' -');
+	checked++;
 	const now = Date.now();
 	matrix.calculateSymmetric(symmetricVector);
 	const af0 = matrix.af();
@@ -23,9 +25,8 @@ for (let symmetricVector of Polynomial.SymmetricVectors2(SIZE)) {
 	const af1 = matrix.af();
 
 	const min = Math.min(af0, af1);
-	checked++;
-	const value = stats.get(min);
-	stats.set(min, (value || 0) + 1);
+	// const value = stats.get(min);
+	// stats.set(min, (value || 0) + 1);
 
 	if (min > 3) {
 		console.log(`a(f)=${af0}`, `a(f')=${af1}`, `min=${min};  `, `λ =`, symmetricVector);
