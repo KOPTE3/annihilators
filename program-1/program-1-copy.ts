@@ -5,7 +5,7 @@ const SIZE = 15;
 const matrix = new PolynomialMatrix(SIZE);
 
 console.log(`n =`, SIZE);
-console.time('program-1');
+console.time('program-1-copy');
 
 const stats = new Map();
 let checked = 0;
@@ -37,7 +37,7 @@ for (let symmetricVector of Polynomial.SymmetricVectors2(SIZE)) {
 	console.log(symmetricVector, 'checked 2', (Date.now() - now) + 'ms');
 }
 
-console.timeEnd('program-1');
+console.timeEnd('program-1-copy');
 console.dir({checked});
 const tableData = [...stats.entries()]
 	.sort(([a1], [a2]) => a1 - a2)

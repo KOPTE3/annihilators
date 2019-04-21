@@ -1,0 +1,193 @@
+/Users/anatolijostapenko/.nvm/versions/node/v10.14.2/bin/node /Users/anatolijostapenko/bmstu/annihilators/program-1/index.js
+n = 2
+program-1: 3.439ms
+{ checked: 3 }
+┌─────────┬──────┬───────┐
+│ (index) │ a(f) │ count │
+├─────────┼──────┼───────┤
+│    0    │  1   │   3   │
+└─────────┴──────┴───────┘
+
+Process finished with exit code 0
+
+
+/Users/anatolijostapenko/.nvm/versions/node/v10.14.2/bin/node /Users/anatolijostapenko/bmstu/annihilators/program-1/index-copy.js
+n = 2
+program-1: 17.065ms
+{ checked: 3 }
+┌─────────┬──────┬───────┐
+│ (index) │ a(f) │ count │
+├─────────┼──────┼───────┤
+│    0    │  1   │   3   │
+└─────────┴──────┴───────┘
+
+Process finished with exit code 0
+
+
+
+
+
+/Users/anatolijostapenko/.nvm/versions/node/v10.14.2/bin/node /Users/anatolijostapenko/bmstu/annihilators/program-1/index.js
+n = 3
+program-1: 5.299ms
+{ checked: 7 }
+┌─────────┬──────┬───────┐
+│ (index) │ a(f) │ count │
+├─────────┼──────┼───────┤
+│    0    │  1   │   6   │
+│    1    │  2   │   1   │
+└─────────┴──────┴───────┘
+
+Process finished with exit code 0
+
+
+/Users/anatolijostapenko/.nvm/versions/node/v10.14.2/bin/node /Users/anatolijostapenko/bmstu/annihilators/program-1/index-copy.js
+n = 3
+program-1-copy: 11.614ms
+{ checked: 7 }
+┌─────────┬──────┬───────┐
+│ (index) │ a(f) │ count │
+├─────────┼──────┼───────┤
+│    0    │  1   │   6   │
+│    1    │  2   │   1   │
+└─────────┴──────┴───────┘
+
+Process finished with exit code 0
+
+
+
+
+/Users/anatolijostapenko/.nvm/versions/node/v10.14.2/bin/node /Users/anatolijostapenko/bmstu/annihilators/program-1/index.js
+n = 4
+program-1: 25.599ms
+{ checked: 15 }
+┌─────────┬──────┬───────┐
+│ (index) │ a(f) │ count │
+├─────────┼──────┼───────┤
+│    0    │  1   │   9   │
+│    1    │  2   │   6   │
+└─────────┴──────┴───────┘
+
+Process finished with exit code 0
+
+
+/Users/anatolijostapenko/.nvm/versions/node/v10.14.2/bin/node /Users/anatolijostapenko/bmstu/annihilators/program-1/index-copy.js
+n = 4
+program-1-copy: 46.920ms
+{ checked: 15 }
+┌─────────┬──────┬───────┐
+│ (index) │ a(f) │ count │
+├─────────┼──────┼───────┤
+│    0    │  1   │   9   │
+│    1    │  2   │   6   │
+└─────────┴──────┴───────┘
+
+Process finished with exit code 0
+
+
+
+/Users/anatolijostapenko/.nvm/versions/node/v10.14.2/bin/node /Users/anatolijostapenko/bmstu/annihilators/program-1/index.js
+n = 5
+program-1: 59.361ms
+{ checked: 31 }
+┌─────────┬──────┬───────┐
+│ (index) │ a(f) │ count │
+├─────────┼──────┼───────┤
+│    0    │  1   │  14   │
+│    1    │  2   │  16   │
+│    2    │  3   │   1   │
+└─────────┴──────┴───────┘
+
+Process finished with exit code 0
+
+
+
+/Users/anatolijostapenko/.nvm/versions/node/v10.14.2/bin/node /Users/anatolijostapenko/bmstu/annihilators/program-1/index-copy.js
+n = 5
+program-1-copy: 88.210ms
+{ checked: 31 }
+┌─────────┬──────┬───────┐
+│ (index) │ a(f) │ count │
+├─────────┼──────┼───────┤
+│    0    │  1   │  14   │
+│    1    │  2   │  16   │
+│    2    │  3   │   1   │
+└─────────┴──────┴───────┘
+
+Process finished with exit code 0
+
+
+
+
+
+
+
+/Users/anatolijostapenko/.nvm/versions/node/v10.14.2/bin/node /Users/anatolijostapenko/bmstu/annihilators/program-1/index.js
+n = 6
+program-1: 191.475ms
+{ checked: 63 }
+┌─────────┬──────┬───────┐
+│ (index) │ a(f) │ count │
+├─────────┼──────┼───────┤
+│    0    │  1   │  21   │
+│    1    │  2   │  32   │
+│    2    │  3   │  10   │
+└─────────┴──────┴───────┘
+
+Process finished with exit code 0
+
+/Users/anatolijostapenko/.nvm/versions/node/v10.14.2/bin/node /Users/anatolijostapenko/bmstu/annihilators/program-1/index-copy.js
+n = 6
+program-1-copy: 302.779ms
+{ checked: 63 }
+┌─────────┬──────┬───────┐
+│ (index) │ a(f) │ count │
+├─────────┼──────┼───────┤
+│    0    │  1   │  21   │
+│    1    │  2   │  32   │
+│    2    │  3   │  10   │
+└─────────┴──────┴───────┘
+
+Process finished with exit code 0
+
+
+
+
+
+
+
+
+/Users/anatolijostapenko/.nvm/versions/node/v10.14.2/bin/node /Users/anatolijostapenko/bmstu/annihilators/program-1/index.js
+n = 7
+a(f)=4 a(f')=4 min=4;   λ = [ 0, 0, 0, 0, 1, 0, 0, 0 ]
+program-1: 675.572ms
+{ checked: 127 }
+┌─────────┬──────┬───────┐
+│ (index) │ a(f) │ count │
+├─────────┼──────┼───────┤
+│    0    │  1   │  30   │
+│    1    │  2   │  51   │
+│    2    │  3   │  45   │
+│    3    │  4   │   1   │
+└─────────┴──────┴───────┘
+
+Process finished with exit code 0
+
+
+
+
+/Users/anatolijostapenko/.nvm/versions/node/v10.14.2/bin/node /Users/anatolijostapenko/bmstu/annihilators/program-1/index-copy.js
+n = 7
+a(f)=4 a(f')=4 min=4;   λ = [ 0, 0, 0, 0, 1, 0, 0, 0 ]
+program-1-copy: 1329.116ms
+{ checked: 127 }
+┌─────────┬──────┬───────┐
+│ (index) │ a(f) │ count │
+├─────────┼──────┼───────┤
+│    0    │  1   │  30   │
+│    1    │  2   │  51   │
+│    2    │  3   │  45   │
+│    3    │  4   │   1   │
+└─────────┴──────┴───────┘
+
+Process finished with exit code 0

@@ -1,7 +1,7 @@
 import Polynomial from '../core/polynomial';
 import PolynomialMatrix from '../core/polynomial-matrix';
 
-const SIZE = 9;
+const SIZE = 7;
 const matrix = new PolynomialMatrix(SIZE);
 
 console.log(`n =`, SIZE);
@@ -30,9 +30,6 @@ for (let symmetricVector of Polynomial.SymmetricVectors2(SIZE)) {
 	if (min > 3) {
 		console.log(`a(f)=${af0}`, `a(f')=${af1}`, `min=${min};  `, `λ =`, symmetricVector);
 	}
-
-	// const str = polynomial.sort().join('+');
-	// console.log('f=', str);
 }
 
 console.timeEnd('program-1');
