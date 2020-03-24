@@ -14,10 +14,10 @@ interface Stat {
 	theoremB: boolean;
 }
 
-const size = 9;
+const size = 3;
 console.log(`n = ${size}`);
 
-console.time('program-2');
+console.time('program');
 
 const linearVectors: Polynomial[] = [];
 const stats: Stat[] = [];
@@ -123,7 +123,7 @@ const R2 = 'Вектор σ';
 const R3 = 'Теорема А';
 const R4 = 'Теорема Б';
 const R5 = 'Кол-во линейных "занулителей"';
-const R6 = 'Пример';
+const R6 = 'Список';
 
 const tableData = stats.map(function (item): any {
 	const o = {
@@ -133,40 +133,43 @@ const tableData = stats.map(function (item): any {
 		[R5]: item.annihilators.length,
 	};
 
-	if (item.annihilators.length === 1) {
-		o[R6] = Polynomial.from(item.annihilators[0], size).toString();
+	if (item.annihilators.length >= 1) {
+		const strstr = item.annihilators
+			.map(it => Polynomial.from(it, size).toString())
+			.join(', ');
+		o[R6] = strstr;
 	}
 
 	return o;
 });
 
-console.table(tableData, [R2, R3, R4, R5, R6]);
+console.table(tableData, [R2, R5, R6]);
 
-for (let stat of stats) {
-	console.log(stat.symmetricVector, `${stat.checkA ? 'A' : ' '}${stat.checkB ? 'B' : ' '}`, stat.annihilators.length);
-}
+// for (let stat of stats) {
+// 	console.log(stat.symmetricVector, `${stat.checkA ? 'A' : ' '}${stat.checkB ? 'B' : ' '}`, stat.annihilators.length);
+// }
 
-console.log(`\n\n### Симметрические полиномы, которые нарушают условия теорем ###\n`);
+// console.log(`\n\n### Симметрические полиномы, которые нарушают условия теорем ###\n`);
+//
+// for (let stat of stats) {
+// 	if (!(stat.theoremA && stat.theoremB)) {
+// 		const {symmetric, symmetricVector, checkA, checkB, theoremA, theoremB, annihilators} = stat;
+// 		console.log(`σ = [ ${symmetricVector.join(' ')} ]`);
+// 		console.log('Список "занулителей":', `${annihilators.length} элементов`);
+//
+// 		const array: any[] = [];
+// 		let strs = annihilators.map((vector: Vector) => Polynomial.from(vector, size).toString());
+//
+// 		while (strs.length) {
+// 			array.push(strs.splice(0, 4));
+// 		}
+//
+// 		console.log(columnify(array, {
+// 			showHeaders: false,
+// 			columnSplitter: '     '
+// 		}));
+// 		console.log('');
+// 	}
+// }
 
-for (let stat of stats) {
-	if (!(stat.theoremA && stat.theoremB)) {
-		const {symmetric, symmetricVector, checkA, checkB, theoremA, theoremB, annihilators} = stat;
-		console.log(`σ = [ ${symmetricVector.join(' ')} ]`);
-		console.log('Список "занулителей":', `${annihilators.length} элементов`);
-
-		const array: any[] = [];
-		let strs = annihilators.map((vector: Vector) => Polynomial.from(vector, size).toString());
-
-		while (strs.length) {
-			array.push(strs.splice(0, 4));
-		}
-
-		console.log(columnify(array, {
-			showHeaders: false,
-			columnSplitter: '     '
-		}));
-		console.log('');
-	}
-}
-
-console.timeEnd('program-2');
+console.timeEnd('program');
